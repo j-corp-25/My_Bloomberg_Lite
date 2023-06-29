@@ -10,6 +10,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-document.addEventListener('DOMContentLoaded', () => {
-  console.log("Hello world!!!")
-});
+// document.addEventListener('DOMContentLoaded', () => {
+//   console.log("Hello world!!!")
+//   console.log(getData)
+
+
+
+// });
