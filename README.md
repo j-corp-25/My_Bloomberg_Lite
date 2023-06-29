@@ -66,4 +66,4 @@ Thursday:
 
 ### Below is the wireframe for the project
 
-![ProjectWireframe](/My_Bloomberg/Assets/Wire_Frame.png)
+![ProjectWireframe](/My_Bloomberg/Assets/WireFrame.jpeg)
