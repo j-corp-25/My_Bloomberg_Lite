@@ -68,4 +68,4 @@ Thursday:
 
 ### Below is the wireframe for the project
 
-![ProjectWireframe](/Screenshot%202023-06-29%20at%201.57.24%20AM.png)
+![ProjectWireframe](/My_Bloomberg/Assets/Wire_Frame.png)
