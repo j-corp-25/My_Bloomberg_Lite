@@ -1,7 +1,5 @@
 # My_Bloomberg_Lite
 
-
-
 ## Description/Background
 
 The Bloomberg_Lite is a mock version of the actual Bloomberg terminal. It would allow the user to enter a ticker and get a graph showing the stock price since inception and also provide news articles and reddit posts from the internet. This would allow users to explore key factors and important ratios that can influence their buying and selling decisions. It would also have very similar styling to how the actual bloomberg terminals look like.
