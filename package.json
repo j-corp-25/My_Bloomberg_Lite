@@ -1,7 +1,7 @@
 {
   "name": "my_bloomberg",
   "version": "1.0.0",
-  "description": "# This amazing tool will help anyone get quick and reliable information about stocks and look at their key factors and imporant ratios that could affect buying/selling decissions",
+  "description": " This amazing tool will help anyone get quick and reliable information about stocks and look at their key factors and imporant ratios that could affect buying/selling decissions",
   "main": "index.js",
   "browserslist": [
     "defaults"
@@ -10,7 +10,7 @@
     "node": "16.20.0"
   },
   "scripts": {
-    "start": "node app.js",
+    "start": "webpack --watch --mode=development",
     "start:debug": "node --inspect app.js",
     "watch": "webpack --watch --mode=development",
     "build": "webpack --mode=production"
@@ -19,7 +19,6 @@
     "type": "git",
     "url": "https://github.com/j-corp-25/My_Bloomberg_Lite"
   },
-
   "keywords": [],
   "author": "Jordy Corporan",
   "license": "ISC",
@@ -29,6 +28,7 @@
     "babel-loader": "^9.1.2",
     "core-js": "^3.31.0",
     "css-loader": "^6.8.1",
+    "lodash": "^4.17.21",
     "mini-css-extract-plugin": "^2.7.6",
     "regenerator-runtime": "^0.13.11",
     "sass": "^1.63.6",
@@ -36,5 +36,4 @@
     "webpack": "^5.88.1",
     "webpack-cli": "^5.1.4"
   }
-
 }

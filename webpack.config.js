@@ -32,15 +32,15 @@ const config = {
       }
     ]
   },
-  plugins: [new MiniCssExtractPlugin()]
+  plugins: [new MiniCssExtractPlugin()],
 };
 
 module.exports = (env, argv) => {
-  if (argv.mode === 'production') {
-    config.devtool = 'source-map';
-  } else {
-    config.devtool = 'eval-source-map';
-  }
+    if (argv.mode === 'production') {
+        config.devtool = 'source-map';
+    } else {
+        config.devtool = 'eval-source-map';
+    }
 
-  return config;
+    return config;
 }
