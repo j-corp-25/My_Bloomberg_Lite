@@ -27,7 +27,9 @@ document.addEventListener("DOMContentLoaded", () => {
 //     const button = document.getElementById("fetchStock");
 
 //     button.addEventListener("click", () => {
-//       new FetchStockData(main);
+//       const stockData = new FetchStockData(main);
+
+//       new CreateVisualsChart(main, stockData);
 //     });
 
 
