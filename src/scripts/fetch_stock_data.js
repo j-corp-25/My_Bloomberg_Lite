@@ -1,28 +1,63 @@
-// Example GET method implementation:
 
-async function getData(url = 'https://jsonplaceholder.typicode.com/users') {
-    // We set a default value for the url to our api. This is recommended, but not required.
 
-    // We await our fetch, which will return a promise object
-    // Because we're using the await keyword,
-        // we have declared getData with to be an async function
-    const response = await fetch(url);
-    if (!response.ok) {
-        throw new Error('Network response was not ok');
+class fetch_stock_data {
+    constructor(ele) {
+        this.ele = ele;
+        // this.ele.innerHTML = "<h1>It's ALIVE!!!</h1>";
+        // this.handleClick = this.handleClick.bind(this);
+
+        this.ele.addEventListener("click", this.handleClick);
+
+        this.getStockData();
+
     }
-    const data = await response.json();
+    
+    async getData() {
+        const url =
+          "https://apistocks.p.rapidapi.com/daily?symbol=AAPL&dateStart=2023-06-01&dateEnd=2023-06-29";
+        const options = {
+          method: "GET",
+          headers: {
+            "X-RapidAPI-Key": "be2c5cf9d2mshdd2979e94314598p19c3dbjsnee3000224bd0",
+            "X-RapidAPI-Host": "apistocks.p.rapidapi.com",
+          },
+        };
 
-    // response.json() parses JSON response into native JavaScript objects
-    // response.json() is asynchronous
-    return data
+        try {
+          const response = await fetch(url, options);
+          const result = await response.json();
+
+
+          const ticker = this.getTicker(result);
+
+
+          const closingPrices = this.getClosingPrices(result);
+
+
+          const dates = this.getDates(result);
+
+          console.log("Ticker:", ticker);
+          console.log("Closing Prices:", closingPrices);
+          console.log("Dates:", dates);
+        } catch (error) {
+          console.error(error);
+        }
+      }
+
+      getTicker(response) {
+        return response.Metadata.Symbol;
+      }
+
+      getClosingPrices(response) {
+        return response.Results.map((result) => result.Close);
+      }
+
+      getDates(response) {
+        return response.Results.map((result) => result.Date);
+      }
+
+
 }
 
-getData()
-    .then(data => {
-        // If the fetch was successful, here we can manipulate the data we received
-        console.log(data);
-    })
-    .catch(error => {
-        // If our fetch was unnsuccessful, here we can handle our error(s)
-        console.error('There has been a problem with your fetch operation: ', error);
-    });
+
+export default fetch_stock_data;
