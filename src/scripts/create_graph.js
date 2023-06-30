@@ -1,43 +1,263 @@
-import FetchStockData from "./fetch_stock_data";
+import FetchStockData from "./fetch_stock_data"
 
-class CreateVisuals {
-    constructor(ele) {
+class CreateVisualsChart {
+    constructor(ele,data) {
         this.ele = ele;
+        this.data = data;
+        this.createChart();
         // this.ele.innerHTML = "<h1>It's ALIVE!!!</h1>";
         // this.handleClick = this.handleClick.bind(this);
 
         // this.ele.addEventListener("click", this.handleClick);
 
-        this.createChart();
 
     }
 
-}
-    const dataset = organizedData
-
-
-    // createChart(); {
+    // createChart() {
+    //     const dataset = this.data.organizedData
     //     const margin = {top: 20, right: 20, bottom:40, left:20 };
     //     const width = 1600 - margin.left - margin.right;
     //     const height = 800 - margin.top - margin.bottom;
-    //     const x = d3.scaletime()
+    //     const x = d3.scaleTime()
     //         .range([0, width]);
-    //     const y = d3.scale.linear()
+    //     const y = d3.scale.Linear()
     //         .range([height, 0]);
     //     const svg = d3.select(".chart-main")
     //         .append("svg").attr("width", width + margin.left + margin.right)
     //                       .attr("height", height + margin.top + margin.bottom)
     //         .append("g").attr("transform", `translate(${margin.left},${margin.top})`);
-
     //     x.domain(d3.extent(dataset,d => d.date));
     //     y.domain([0, d3.max(dataset, d => d.value)]);
+    //     svg.append("g")
+    //             .attr("transform", `translate(0,${height})`)
+    //             .call(d3.axisBottom(x)
+    //                 .ticks(d3.timeMonth.every(1))
+    //                 .tickFormat(d3.timeMonth.format("MMM D, YYYY")));
+    //     svg.append("g")
+    //         .call(d3.axisLeft(y));
+    //     const line = d3.line()
+    //         .x(d => x(d.date))
+    //         .y(d => y(d.value));
+    //     svg.append("path")
+    //         .datum(dataset)
+    //         .attr("fill","none ")
+    //         .attr("stroke","none")
+    //         .attr("stroke-width", 2)
+    //         .attr("stroke-opacity",6)
+    //         .attr("stroke-linecap", "round")
+    //         .attr("stroke-linejoin", "round")
+    //         .attr("d", line);
+    // }
+    // createChart() {
+    //     const dataset = this.data.organizedData
+    //     const margin = { top: 20, right: 20, bottom: 40, left: 20 };
+    //     const width = 1600 - margin.left - margin.right;
+    //     const height = 800 - margin.top - margin.bottom;
+    //     const x = d3.scaleTime().range([0, width]);
+    //     const y = d3.scaleLinear().range([height, 0]);
+    //     const svg = d3
+    //         .select(".chart-main")
+    //         .append("svg")
+    //         .attr("width", width + margin.left + margin.right)
+    //         .attr("height", height + margin.top + margin.bottom)
+    //         .append("g")
+    //         .attr("transform", `translate(${margin.left},${margin.top})`);
+    //     x.domain(d3.extent(dataset, (d) => d.date));
+    //     y.domain([0, d3.max(dataset, (d) => d.value)]);
+    //     svg
+    //         .append("g")
+    //         .attr("transform", `translate(0,${height})`)
+    //         .call(
+    //             d3.axisBottom(x)
+    //                 .ticks(d3.timeMonth.every(1))
+    //                 .tickFormat(d3.timeFormat("%b %d, %Y"))
+    //         );
+    //     svg.append("g").call(d3.axisLeft(y));
+    //     const line = d3
+    //         .line()
+    //         .x((d) => x(d.date))
+    //         .y((d) => y(d.value));
+    //     svg
+    //         .append("path")
+    //         .datum(dataset)
+    //         .attr("fill", "none")
+    //         .attr("stroke", "none")
+    //         .attr("stroke-width", 2)
+    //         .attr("stroke-opacity", 6)
+    //         .attr("stroke-linecap", "round")
+    //         .attr("stroke-linejoin", "round")
+    //         .attr("d", line);
+    // }
+
+    // createChart() {
+    //     const dataset = this.data.organizedData // Make sure the dataset is accessible within the scope
+    //     const margin = { top: 20, right: 20, bottom: 40, left: 20 };
+    //     const width = 1600 - margin.left - margin.right;
+    //     const height = 800 - margin.top - margin.bottom;
+    //     const x = d3.scaleTime().range([0, width]); // Fix function name to scaleTime
+    //     const y = d3.scaleLinear().range([height, 0]); // Fix function name to scaleLinear
+    //     const svg = d3
+    //       .select(".chart-main")
+    //       .append("svg")
+    //       .attr("width", width + margin.left + margin.right)
+    //       .attr("height", height + margin.top + margin.bottom)
+    //       .append("g")
+    //       .attr("transform", `translate(${margin.left},${margin.top})`);
+    //     x.domain(d3.extent(dataset, (d) => d.Date));
+    //     y.domain([0, d3.max(dataset, (d) => d.Close)]);
+    //     svg
+    //       .append("g")
+    //       .attr("transform", `translate(0,${height})`)
+    //       .call(
+    //         d3.axisBottom(x)
+    //           .ticks(d3.timeMonth.every(1))
+    //           .tickFormat(d3.timeFormat("%b %d")) // Use timeFormat to format tick labels
+    //       );
+    //     svg.append("g").call(d3.axisLeft(y));
+    //     const line = d3
+    //       .line()
+    //       .x((d) => x(d.Date))
+    //       .y((d) => y(d.Close));
+    //     svg
+    //       .append("path")
+    //       .datum(dataset)
+    //       .attr("fill", "none")
+    //       .attr("stroke", "blue") // Set stroke color for the line
+    //       .attr("stroke-width", 2)
+    //       .attr("d", line);
+    //   }
+
+    // createChart() {
+    //     const dataset = this.data.organizedData;
+    //     const margin = { top: 20, right: 20, bottom: 40, left: 40 };
+    //     const width = 1600 - (margin.left - margin.right);
+    //     const height = 800 - (margin.top - margin.bottom);
+    //     const x = d3.scaleTime().range([0, width]);
+    //     const y = d3.scaleLinear().range([height, 0]);
+    //     const svg = d3
+    //       .select(".chart-main")
+    //       .append("svg")
+    //       .attr("width", width + margin.left + margin.right)
+    //       .attr("height", height + margin.top + margin.bottom)
+    //       .append("g")
+    //       .attr("transform", `translate(${margin.left},${margin.top})`);
+    //     x.domain(d3.extent(dataset, (d) => d.Date));
+    //     y.domain([0, d3.max(dataset, (d) => d.Close)]);
+    //     svg
+    //       .append("g")
+    //       .attr("transform", `translate(0,${height})`)
+    //       .call(
+    //         d3.axisBottom(x)
+    //           .ticks(d3.timeMonth.every(1))
+    //           .tickFormat(d3.timeFormat("%a %d")) // Format the tick labels
+    //       );
+    //     svg.append("g").call(d3.axisLeft(y));
+    //     const line = d3
+    //       .line()
+    //       .x((d) => x(d.Date))
+    //       .y((d) => y(d.Close));
+    //     svg
+    //       .append("path")
+    //       .datum(dataset)
+    //       .attr("fill", "none")
+    //       .attr("stroke", "blue")
+    //       .attr("stroke-width", 2)
+    //       .attr("d", line);
+    //   }
+    // createChart() {
+    //     const dataset = this.data.organizedData;
+    //     const margin = { top: 20, right: 20, bottom: 40, left: 40 };
+    //     const width = 900 - margin.left - margin.right;
+    //     const height = 650 - margin.top - margin.bottom;
+    //     const x = d3.scaleTime().range([0, width]);
+    //     const y = d3.scaleLinear().range([height, 0]);
+    //     const svg = d3
+    //       .select(".chart-main")
+    //       .attr("width", width + margin.left + margin.right)
+    //       .attr("height", height + margin.top + margin.bottom)
+    //       .append("g")
+    //       .attr("transform", `translate(${margin.left},${margin.top})`);
+    //     x.domain(d3.extent(dataset, (d) => d.Date));
+    //     y.domain([0, d3.max(dataset, (d) => d.Close)]);
+    //     svg
+    //       .append("g")
+    //       .attr("transform", `translate(0, ${height})`)
+    //       .call(d3.axisBottom(x)
+    //         .ticks(d3.timeMonth.every(1))
+    //         .tickFormat(d3.timeFormat("%b %d, %Y")))
+    //       .selectAll("text")
+    //       .style("text-anchor", "end")
+    //       .attr("dx", "-0.8em")
+    //       .attr("dy", "0.15em")
+    //       .attr("transform", "rotate(-65)");
+    //     svg.append("g").call(d3.axisLeft(y));
+    //     const line = d3
+    //       .line()
+    //       .x((d) => x(d.Date))
+    //       .y((d) => y(d.Close));
+    //     svg
+    //       .append("path")
+    //       .datum(dataset)
+    //       .attr("fill", "none")
+    //       .attr("stroke", "blue")
+    //       .attr("stroke-width", 2)
+    //       .attr("d", line);
+    //   }
+
+    createChart() {
+        const dataset = this.data.organizedData;
+        const margin = { top: 20, right: 20, bottom: 40, left: 40 };
+        const width = 800 - margin.left - margin.right;
+        const height = 400 - margin.top - margin.bottom;
+        const x = d3.scaleTime().range([0, width]);
+        const y = d3.scaleLinear().range([height, 0]);
+        const svg = d3
+          .select(".chart-main")
+          .attr("width", width + margin.left + margin.right)
+          .attr("height", height + margin.top + margin.bottom)
+          .append("g")
+          .attr("transform", `translate(${margin.left},${margin.top})`);
+
+        // Calculate the minimum and maximum dates
+        const minDate = d3.min(dataset, (d) => d.Date);
+        const maxDate = d3.max(dataset, (d) => d.Date);
+
+        x.domain([minDate, maxDate]);
+        y.domain([0, d3.max(dataset, (d) => d.Close)]);
+        svg
+          .append("g")
+          .attr("transform", `translate(0, ${height})`)
+          .call(d3.axisBottom(x)
+            .ticks(d3.timeMonth.every(1))
+            .tickFormat(d3.timeFormat("%b %d, %Y")))
+          .selectAll("text")
+          .style("text-anchor", "end")
+          .attr("dx", "-0.8em")
+          .attr("dy", "0.15em")
+          .attr("transform", "rotate(-65)");
+        svg.append("g").call(d3.axisLeft(y));
+        const line = d3
+          .line()
+          .x((d) => x(d.Date))
+          .y((d) => y(d.Close));
+        svg
+          .append("path")
+          .datum(dataset)
+          .attr("fill", "none")
+          .attr("stroke", "blue")
+          .attr("stroke-width", 2)
+          .attr("d", line);
+      }
 
 
-        // svg.append("g")
-        //         .attr("transform", `translate
 
 
-    }
+
+
+
+}
+
+export default CreateVisualsChart;
 
 
 
@@ -73,6 +293,3 @@ class CreateVisuals {
 //     // Return the SVG element.
 //     return svg.node();
 //   }
-
-
-export default create

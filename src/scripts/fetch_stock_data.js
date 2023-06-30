@@ -5,13 +5,8 @@ class FetchStockData {
         this.ele = ele;
         // this.ele.innerHTML = "<h1>It's ALIVE!!!</h1>";
         // this.handleClick = this.handleClick.bind(this);
-
-        this.ele.addEventListener("click", this.handleClick);
-
+        // this.ele.addEventListener("click", this.handleClick);
         this.getStockData();
-
-
-
 
     }
 
@@ -41,12 +36,15 @@ class FetchStockData {
 
           const dates = this.getDates(result);
 
-          const organizedData = this.organizedData(dates, closingPrices);
+          const organizedData = await this.organizedData(dates, closingPrices);
 
           console.log("Ticker:", ticker);
-          console.log("Closing Prices:", closingPrices);
-          console.log("Dates:", dates);
-            console.log("Organized Data:", organizedData);
+        //   console.log("Closing Prices:", closingPrices);
+        //   console.log("Dates:", dates);
+          console.log("Organized Data:", organizedData);
+
+          return {organizedData};
+
         } catch (error) {
           console.error(error);
         }
@@ -65,9 +63,9 @@ class FetchStockData {
       }
 
 
-      organizedData(dates, closingPrices) {
-        console.log("Dates:", dates);
-        console.log("Closing Prices:", closingPrices);
+    async organizedData(dates, closingPrices) {
+        // console.log("Dates:", dates);
+        // console.log("Closing Prices:", closingPrices);
 
         return dates.map((date, index) => {
           return {
@@ -75,7 +73,7 @@ class FetchStockData {
             Close: closingPrices[index],
           };
         });
-      }
+    }
 
 
 
