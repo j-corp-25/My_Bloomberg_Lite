@@ -11,7 +11,7 @@ class fetch_stock_data {
         this.getStockData();
 
     }
-    
+
     async getData() {
         const url =
           "https://apistocks.p.rapidapi.com/daily?symbol=AAPL&dateStart=2023-06-01&dateEnd=2023-06-29";
@@ -55,6 +55,8 @@ class fetch_stock_data {
       getDates(response) {
         return response.Results.map((result) => result.Date);
       }
+
+      organize_data()
 
 
 }
