@@ -14,7 +14,7 @@ class FetchStockData {
 
     async getStockData() {
         const url =
-          "https://apistocks.p.rapidapi.com/daily?symbol=AAPL&dateStart=2023-06-01&dateEnd=2023-06-29";
+          "https://apistocks.p.rapidapi.com/daily?symbol=AAPL&dateStart=2020-06-01&dateEnd=2023-06-29";
         const options = {
           method: "GET",
           headers: {
@@ -64,14 +64,11 @@ class FetchStockData {
 
 
     async organizedData(dates, closingPrices) {
-        // console.log("Dates:", dates);
-        // console.log("Closing Prices:", closingPrices);
-
         return dates.map((date, index) => {
-          return {
-            Date: new Date(date),
-            Close: closingPrices[index],
-          };
+            return {
+                Date: new Date(Date.parse(date)),
+                Close: closingPrices[index],
+            };
         });
     }
 

@@ -206,7 +206,7 @@ class CreateVisualsChart {
 
     createChart() {
         const dataset = this.data.organizedData;
-        const margin = { top: 20, right: 20, bottom: 40, left: 40 };
+        const margin = { top: 20, right: 20, bottom: 60, left: 40 };
         const width = 800 - margin.left - margin.right;
         const height = 400 - margin.top - margin.bottom;
         const x = d3.scaleTime().range([0, width]);
@@ -248,6 +248,48 @@ class CreateVisualsChart {
           .attr("stroke-width", 2)
           .attr("d", line);
       }
+
+    // createChart() {
+    //     const dataset = this.data.organizedData;
+    //     const margin = { top: 20, right: 20, bottom: 40, left: 20 };
+    //     const width = 1600 - margin.left - margin.right;
+    //     const height = 800 - margin.top - margin.bottom;
+    //     const x = d3.scaleTime().range([0, width]);
+    //     const y = d3.scaleLinear().range([height, 0]);
+    //     const svg = d3
+    //       .select(".chart-main")
+    //       .append("svg")
+    //       .attr("width", width + margin.left + margin.right)
+    //       .attr("height", height + margin.top + margin.bottom)
+    //       .append("g")
+    //       .attr("transform", `translate(${margin.left},${margin.top})`);
+
+    //     x.domain(d3.extent(dataset, (d) => d.Date));
+    //     y.domain([0, d3.max(dataset, (d) => d.Close)]);
+
+    //     svg
+    //       .append("g")
+    //       .attr("transform", `translate(0,${height})`)
+    //       .call(
+    //         d3.axisBottom(x).ticks(d3.timeMonth.every(1)).tickFormat(d3.timeFormat("%b %d, %Y"))
+    //       );
+
+    //     svg.append("g").call(d3.axisLeft(y));
+
+    //     const line = d3
+    //       .line()
+    //       .x((d) => x(d.Date))
+    //       .y((d) => y(d.Close));
+
+    //     svg
+    //       .append("path")
+    //       .datum(dataset)
+    //       .attr("fill", "none")
+    //       .attr("stroke", "blue")
+    //       .attr("stroke-width", 2)
+    //       .attr("d", line);
+    //   }
+
 
 
 
