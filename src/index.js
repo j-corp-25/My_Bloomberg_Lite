@@ -1,4 +1,5 @@
 import Example from "./scripts/example"
+import FetchStockData from "./scripts/fetchStockData";
 
 document.addEventListener("DOMContentLoaded", () => {
     const main = document.getElementById("main")

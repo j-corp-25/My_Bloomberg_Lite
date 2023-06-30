@@ -1,22 +1,39 @@
+import FetchStockData from "./fetch_stock_data";
+
 class CreateVisuals {
+    constructor(ele) {
+        this.ele = ele;
+        // this.ele.innerHTML = "<h1>It's ALIVE!!!</h1>";
+        // this.handleClick = this.handleClick.bind(this);
+
+        // this.ele.addEventListener("click", this.handleClick);
+
+        this.createChart();
+
+    }
 
 }
 
 
-
-
+    createChart(); {
+        const margin = {top: 20, right: 20, bottom:40, left:20 };
+        const width = 1600 - margin.left - margin.right;
+        const height = 800 - margin.top - margin.bottom;
+        const x = d3.scaletime()
+            .range([0, width]);
+        const y = d3.scale.linear()
+            .range([height, 0]);
+        const svg = d3.select(".chart-main")
+            .append("svg").attr("width", width + margin.left + margin.right)
+                          .attr("height", height + margin.top + margin.bottom)
+            .append("g").attr("transform", `translate(${margin.left},${margin.top})`);
+    }
 
 
 
 
 {
     // Declare the chart dimensions and margins.
-    const width = 640;
-    const height = 400;
-    const marginTop = 20;
-    const marginRight = 20;
-    const marginBottom = 30;
-    const marginLeft = 40;
 
     // Declare the x (horizontal position) scale.
     const x = d3.scaleUtc()
@@ -48,4 +65,4 @@ class CreateVisuals {
   }
 
 
-export default Example;
+export default create

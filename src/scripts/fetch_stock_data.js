@@ -1,6 +1,6 @@
 
 
-class fetch_stock_data {
+class FetchStockData {
     constructor(ele) {
         this.ele = ele;
         // this.ele.innerHTML = "<h1>It's ALIVE!!!</h1>";
@@ -12,7 +12,7 @@ class fetch_stock_data {
 
     }
 
-    async getData() {
+    async getStockData() {
         const url =
           "https://apistocks.p.rapidapi.com/daily?symbol=AAPL&dateStart=2023-06-01&dateEnd=2023-06-29";
         const options = {
@@ -56,10 +56,19 @@ class fetch_stock_data {
         return response.Results.map((result) => result.Date);
       }
 
-      organize_data()
+      OrganizeData(dates, closingPrices) {
+        return dates.map((date, index) => {
+          return {
+            Date: new Date(date),
+            Close: closingPrices[index],
+          };
+        });
+      }
+
+
 
 
 }
 
 
-export default fetch_stock_data;
+export default FetchStockData;
