@@ -1,9 +1,13 @@
 .chart-main {
 
-    width: 65%;
-    height: 85%;
-    border: 2px solid;
+    width: 55%;
+    height: 55%;
+    border: 1px solid;
     margin-left: 10px;
 
 
+
+}
+svg {
+    
 }
