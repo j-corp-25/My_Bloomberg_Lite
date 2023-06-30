@@ -204,50 +204,50 @@ class CreateVisualsChart {
     //       .attr("d", line);
     //   }
 
-    createChart() {
-        const dataset = this.data.organizedData;
-        const margin = { top: 20, right: 20, bottom: 60, left: 40 };
-        const width = 800 - margin.left - margin.right;
-        const height = 400 - margin.top - margin.bottom;
-        const x = d3.scaleTime().range([0, width]);
-        const y = d3.scaleLinear().range([height, 0]);
-        const svg = d3
-          .select(".chart-main")
-          .attr("width", width + margin.left + margin.right)
-          .attr("height", height + margin.top + margin.bottom)
-          .append("g")
-          .attr("transform", `translate(${margin.left},${margin.top})`);
+    // createChart() {
+    //     const dataset = this.data.organizedData;
+    //     const margin = { top: 20, right: 20, bottom: 60, left: 40 };
+    //     const width = 800 - margin.left - margin.right;
+    //     const height = 400 - margin.top - margin.bottom;
+    //     const x = d3.scaleTime().range([0, width]);
+    //     const y = d3.scaleLinear().range([height, 0]);
+    //     const svg = d3
+    //       .select(".chart-main")
+    //       .attr("width", width + margin.left + margin.right)
+    //       .attr("height", height + margin.top + margin.bottom)
+    //       .append("g")
+    //       .attr("transform", `translate(${margin.left},${margin.top})`);
 
-        // Calculate the minimum and maximum dates
-        const minDate = d3.min(dataset, (d) => d.Date);
-        const maxDate = d3.max(dataset, (d) => d.Date);
+    //     // Calculate the minimum and maximum dates
+    //     const minDate = d3.min(dataset, (d) => d.Date);
+    //     const maxDate = d3.max(dataset, (d) => d.Date);
 
-        x.domain([minDate, maxDate]);
-        y.domain([0, d3.max(dataset, (d) => d.Close)]);
-        svg
-          .append("g")
-          .attr("transform", `translate(0, ${height})`)
-          .call(d3.axisBottom(x)
-            .ticks(d3.timeMonth.every(1))
-            .tickFormat(d3.timeFormat("%b %d, %Y")))
-          .selectAll("text")
-          .style("text-anchor", "end")
-          .attr("dx", "-0.8em")
-          .attr("dy", "0.15em")
-          .attr("transform", "rotate(-65)");
-        svg.append("g").call(d3.axisLeft(y));
-        const line = d3
-          .line()
-          .x((d) => x(d.Date))
-          .y((d) => y(d.Close));
-        svg
-          .append("path")
-          .datum(dataset)
-          .attr("fill", "none")
-          .attr("stroke", "blue")
-          .attr("stroke-width", 2)
-          .attr("d", line);
-      }
+    //     x.domain([minDate, maxDate]);
+    //     y.domain([0, d3.max(dataset, (d) => d.Close)]);
+    //     svg
+    //       .append("g")
+    //       .attr("transform", `translate(0, ${height})`)
+    //       .call(d3.axisBottom(x)
+    //         .ticks(d3.timeMonth.every(1))
+    //         .tickFormat(d3.timeFormat("%b %d, %Y")))
+    //       .selectAll("text")
+    //       .style("text-anchor", "end")
+    //       .attr("dx", "-0.8em")
+    //       .attr("dy", "0.15em")
+    //       .attr("transform", "rotate(-65)");
+    //     svg.append("g").call(d3.axisLeft(y));
+    //     const line = d3
+    //       .line()
+    //       .x((d) => x(d.Date))
+    //       .y((d) => y(d.Close));
+    //     svg
+    //       .append("path")
+    //       .datum(dataset)
+    //       .attr("fill", "none")
+    //       .attr("stroke", "blue")
+    //       .attr("stroke-width", 2)
+    //       .attr("d", line);
+    //   }
 
     // createChart() {
     //     const dataset = this.data.organizedData;
