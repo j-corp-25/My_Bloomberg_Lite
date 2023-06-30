@@ -13,6 +13,7 @@ class CreateVisuals {
     }
 
 }
+    const stockData = [organizedData]
 
 
     createChart(); {

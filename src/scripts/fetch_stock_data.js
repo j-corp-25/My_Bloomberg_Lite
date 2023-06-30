@@ -9,11 +9,13 @@ class FetchStockData {
         this.ele.addEventListener("click", this.handleClick);
 
         this.getStockData();
-      
+
 
 
 
     }
+
+
 
     async getStockData() {
         const url =
@@ -39,7 +41,7 @@ class FetchStockData {
 
           const dates = this.getDates(result);
 
-          const organizedData = this.organizeData(dates, closingPrices);
+          const organizedData = this.organizedData(dates, closingPrices);
 
           console.log("Ticker:", ticker);
           console.log("Closing Prices:", closingPrices);
@@ -62,13 +64,14 @@ class FetchStockData {
         return response.Results.map((result) => result.Date);
       }
 
-      organizeData(dates, closingPrices) {
+
+      organizedData(dates, closingPrices) {
         console.log("Dates:", dates);
         console.log("Closing Prices:", closingPrices);
 
         return dates.map((date, index) => {
           return {
-            Date: date,
+            Date: new Date(date),
             Close: closingPrices[index],
           };
         });
