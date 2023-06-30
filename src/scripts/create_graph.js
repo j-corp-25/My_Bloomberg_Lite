@@ -19,7 +19,7 @@ class CreateVisualsChart {
         const x = d3.scaleTime().range([0, width]);
         const y = d3.scaleLinear().range([height, 0]);
         const svg = d3
-          .select(".chart-main")
+          .select("svg")
           .attr("width", width + margin.left + margin.right)
           .attr("height", height + margin.top + margin.bottom)
           .append("g")

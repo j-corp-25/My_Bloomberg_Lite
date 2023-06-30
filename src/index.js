@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
       dataFetched = true; // Set the flag to true after fetching data
     }
   });
+  
 });
 // document.addEventListener("DOMContentLoaded", () => {
 //     const main = document.getElementById("main")
