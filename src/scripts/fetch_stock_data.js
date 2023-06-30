@@ -9,6 +9,9 @@ class FetchStockData {
         this.ele.addEventListener("click", this.handleClick);
 
         this.getStockData();
+      
+
+
 
     }
 
@@ -36,9 +39,12 @@ class FetchStockData {
 
           const dates = this.getDates(result);
 
+          const organizedData = this.organizeData(dates, closingPrices);
+
           console.log("Ticker:", ticker);
           console.log("Closing Prices:", closingPrices);
           console.log("Dates:", dates);
+            console.log("Organized Data:", organizedData);
         } catch (error) {
           console.error(error);
         }
@@ -56,10 +62,13 @@ class FetchStockData {
         return response.Results.map((result) => result.Date);
       }
 
-      OrganizeData(dates, closingPrices) {
+      organizeData(dates, closingPrices) {
+        console.log("Dates:", dates);
+        console.log("Closing Prices:", closingPrices);
+
         return dates.map((date, index) => {
           return {
-            Date: new Date(date),
+            Date: date,
             Close: closingPrices[index],
           };
         });
