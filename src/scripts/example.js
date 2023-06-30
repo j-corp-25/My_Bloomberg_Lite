@@ -27,9 +27,13 @@ class Example {
         const response = await fetch(url, options);
         const result = await response.json();
 
-        // Extracting ticker, closing prices, and dates
+
         const ticker = this.getTicker(result);
+
+
         const closingPrices = this.getClosingPrices(result);
+
+
         const dates = this.getDates(result);
 
         console.log("Ticker:", ticker);
