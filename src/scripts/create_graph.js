@@ -13,7 +13,7 @@ class CreateVisualsChart {
   }
   createChart(data) {
         const dataset = data.organizedData;
-        const margin = { top: 20, right: 20, bottom: 40, left: 40 };
+        const margin = { top: 50, right: 20, bottom: 60, left: 50 };
         const width = 900 - margin.left - margin.right;
         const height = 650 - margin.top - margin.bottom;
         const x = d3.scaleTime().range([0, width]);

@@ -4,7 +4,6 @@ import FetchStockData from "./scripts/fetch_stock_data";
 import CreateVisualsChart from "./scripts/create_graph";
 
 document.addEventListener("DOMContentLoaded", () => {
-  const main = document.getElementById("main");
   const button = document.getElementById("fetchStock");
 
   // Define a flag to track if the data has been fetched
@@ -13,9 +12,10 @@ document.addEventListener("DOMContentLoaded", () => {
   button.addEventListener("click", async () => {
     // Check if data has already been fetched
     if (!dataFetched) {
-      const fetchStockData = new FetchStockData(main);
-      const stockData = await fetchStockData.getStockData();
-      new CreateVisualsChart(main, stockData);
+      const fetchStockData = new FetchStockData(".chart-main");
+      // console.log(main);
+      const stockData =  await fetchStockData.getStockData();
+      new CreateVisualsChart(button, stockData);
       dataFetched = true; // Set the flag to true after fetching data
     }
   });
