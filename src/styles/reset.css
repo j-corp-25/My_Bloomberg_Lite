@@ -51,3 +51,18 @@ table {
 a {
     text-decoration: none;
 }
+
+a,
+label,
+button,
+input[type="submit"],
+input[type="button"],
+input[type="radio"],
+input[type="checkbox"] {
+	cursor: pointer;
+}
+
+button[disabled],
+input[disabled] {
+	cursor: default;
+}

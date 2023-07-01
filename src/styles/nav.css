@@ -1,0 +1,28 @@
+.main-nav {
+    overflow: hidden;
+    background-color: #e9e9e9;
+  }
+
+.main-nav a {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.main-nav a:hover {
+    background-color: orange;
+    color: black;
+}
+
+.main-nav input{
+    float: right;
+    padding: 6px;
+    border: none;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 17px;
+  }

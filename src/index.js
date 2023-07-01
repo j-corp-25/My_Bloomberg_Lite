@@ -3,23 +3,29 @@ import Example from "./scripts/example"
 import FetchStockData from "./scripts/fetch_stock_data";
 import CreateVisualsChart from "./scripts/create_graph";
 
+
 document.addEventListener("DOMContentLoaded", () => {
+  const tickerInput = document.getElementById("tickerInput");
   const button = document.getElementById("fetchStock");
 
   // Define a flag to track if the data has been fetched
   let dataFetched = false;
 
-  button.addEventListener("click", async () => {
+  button.addEventListener("click", async(event) => {
+
     // Check if data has already been fetched
-    if (!dataFetched) {
+    event.preventDefault();
+    const ticker = tickerInput.value;
+
+
       const fetchStockData = new FetchStockData(".chart-main");
       // console.log(main);
-      const stockData =  await fetchStockData.getStockData();
+      const stockData =  await fetchStockData.getStockData(ticker.toUpperCase());
       new CreateVisualsChart(button, stockData);
       dataFetched = true; // Set the flag to true after fetching data
-    }
+
   });
-  
+
 });
 // document.addEventListener("DOMContentLoaded", () => {
 //     const main = document.getElementById("main")

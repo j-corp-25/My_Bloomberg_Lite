@@ -49,7 +49,7 @@ class CreateVisualsChart {
           .attr("stroke", "blue")
           .attr("stroke-width", 2)
           .attr("d", line);
-      }
+        }
 
   // createChart() {
   //   const dataset = this.data.organizedData

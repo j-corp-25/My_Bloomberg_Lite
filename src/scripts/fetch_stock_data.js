@@ -11,9 +11,9 @@ class FetchStockData {
 
 
 
-    async getStockData() {
+    async getStockData(ticker) {
         const url =
-          "https://apistocks.p.rapidapi.com/daily?symbol=AAPL&dateStart=2019-06-29&dateEnd=2023-06-29";
+          `https://apistocks.p.rapidapi.com/daily?symbol=${ticker}&dateStart=2019-06-29&dateEnd=2023-06-29`;
         const options = {
           method: "GET",
           headers: {
