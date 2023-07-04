@@ -16,7 +16,7 @@
   \**********************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _scripts_fetchData__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./scripts/fetchData */ \"./src/scripts/fetchData.js\");\n\n\ndocument.addEventListener(\"DOMContentLoaded\", function() {\n    console.log(\"The DOM has loaded\");\n    (0,_scripts_fetchData__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\n});\n\nconsole.log(\"Hello World\");\n\n\n//# sourceURL=webpack://my_bloomberg/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _scripts_fetchData__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./scripts/fetchData */ \"./src/scripts/fetchData.js\");\n\n\n\ndocument.addEventListener(\"DOMContentLoaded\", function() {\n    console.log(\"The DOM has loaded\");\n    (0,_scripts_fetchData__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\n});\n\nconsole.log(\"Hello World\");\n\n\n//# sourceURL=webpack://my_bloomberg/./src/index.js?");
 
 /***/ }),
 
