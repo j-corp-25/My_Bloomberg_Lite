@@ -3,3 +3,5 @@ function createChart(){
     //Define the chart date format
     let dateFormat = d3.timeFormat("%Y-%M-%D");
 }
+
+export default createChart
