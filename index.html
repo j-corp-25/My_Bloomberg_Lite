@@ -32,6 +32,69 @@
         <div id="chart-container">
           <span id="ticker-label">Ticker: <span id="chart-container-ticker"></span>
           <svg id="chart"></svg>
+          <div id="date-intervals">
+            <!-- Added an animated button that pulsates.Wrapped it in div so animation doesnt affect other elements -->
+            <div id="live-button-container">
+              <button class="pulse-live-data"><span>Live</span>
+            </button>
+            </div>
+             <button value="1min">1Min</button>
+             <button value="5min">5Min</button>
+             <button value="15min">15Min</button>
+             <button value="30min">30Min</button>
+             <button value="1day">1D</button>
+             <button value="1week">1Week</button>
+             <button value="1month">Max</button>
+         </div>
+         <!-- This is a section where the user can access additional info -->
+         <aside class="side-information-section">
+            <div class="tab">
+                <button class="tablinks" id="defaultOpen">News</button>
+                <button class="tablinks">Reddit</button>
+            </div>
+            <div id="News" class="tabcontent">
+            <h3>News</h3>
+            <article>
+                <a href="#">Link</a>
+                <h4>Article Title</h4>
+                <p>Article Summary</p>
+                <p>Author</p>
+            </article>
+            <article>
+                <a href="#">Link</a>
+                <h4>Article Title</h4>
+                <p>Article Summary</p>
+                <p>Author</p>
+            </article>
+            <article>
+                <a href="#">Link</a>
+                <h4>Article Title</h4>
+                <p>Article Summary</p>
+                <p>Author</p>
+            </article>
+           </div>
+           <div id="Reddit" class="tabcontent">
+            <h3>Reddit</h3>
+           <article>
+              <a href="#">Link</a>
+              <h4>Post Title</h4>
+              <p>Post Summary</p>
+              <p>Post Author</p>
+            </article>
+           <article>
+              <a href="#">Link</a>
+              <h4>Post Title</h4>
+              <p>Post Summary</p>
+              <p>Post Author</p>
+            </article>
+           <article>
+              <a href="#">Link</a>
+              <h4>Post Title</h4>
+              <p>Post Summary</p>
+              <p>Post Author</p>
+            </article>
+           </div>
+         </aside>
         </div>
       </section>
     </main>
