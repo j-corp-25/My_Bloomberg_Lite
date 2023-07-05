@@ -2,9 +2,6 @@ import fetchData from './scripts/fetchData';
 import {generateNewChart} from './scripts/createChart';
 
 document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("defaultOpen").click();
-    const defaultButton = document.getElementById("defaultButton")
-    defaultButton.click();
     let currentTicker = '';
     const tickerElement = document.getElementById('chart-container-ticker');
     const SNP500 = [
@@ -65,6 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById(tabName).style.display = "block";
         evt.currentTarget.className += " active";
     }
+    document.getElementById("defaultOpen").click();
 
     var tabButtons = document.getElementsByClassName('tablinks');
     for (var i = 0; i < tabButtons.length; i++) {
