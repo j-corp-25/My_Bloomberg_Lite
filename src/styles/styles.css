@@ -208,10 +208,6 @@ span#ticker-label {
 #aside-containers {
     display: flex;
     flex-direction: column;
-    
-
-
-
 }
 
 .side-information-section {
@@ -231,4 +227,48 @@ span#ticker-label {
 .ratio-list-container {
     /* display: flex; */
 }
-L
+
+aside .ratio-information-container > h4{
+    margin-top: 50px;
+}
+
+aside .side-information-section {
+    margin-bottom: 50px;
+}
+
+
+.side-information-section {
+    max-width: 100%;
+    max-height: 100%;
+    /* margin-top: 50px; */
+}
+
+.ratio-information-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 50px;
+}
+
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+    height: 250px;
+    overflow-y: auto;
+    /* width: max-content; */
+}
+
+nav li {
+    list-style: none;
+}
+
+article {
+  border-bottom: 1px solid black;
+}
+article {
+    border-bottom: 1px solid black;
+}
+.tabcontent :last-child{
+  border-bottom: 0;
+}

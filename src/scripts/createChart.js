@@ -98,7 +98,35 @@ function createChart(data,selector){
     .attr("stroke", "steelblue")
     .attr("stroke-width", 2)
     .attr("d", line);
+
+
+    svg.selectAll(".dot")
+    .data(data)
+    .enter().append("circle")
+    .attr("class", "dot") // Assign a class for styling
+    .attr("cx", function(d, i) { return xScale(d.datetime) })
+    .attr("cy", function(d, i) { return yScale(d.close) })
+    .attr("r", 5) // Radius size, could be adjusted
+    .attr('fill', function (d, i) {
+        return dateFormat(d.datetime) // If dateFormat function returns color code
+    })
+    .style("opacity", 0) // Start invisible
+    .on('mouseover', function (d, i) {
+        d3.select(this).transition()
+            .duration('50')
+            .style('fill', 'white')
+            .style('opacity', '.85')
+            ; // Make visible on mouseover
+    })
+    .on('mouseout', function (d, i) {
+        d3.select(this).transition()
+        .duration('50')
+        .style('opacity', '0'); // Revert to invisible after mouseout
+    });
+
+
 }
+
 
 //this function will generate a new chart and delete the old one passing in the data from the fetch and the chart class which is assigned to my svg. I could have selected the svg from the start but this is how I did it
 function generateNewChart(data) {
