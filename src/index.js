@@ -1,10 +1,10 @@
 import fetchData from './scripts/fetchData';
-import createChart from './scripts/fetchData';
+import {generateNewChart} from './scripts/createChart';
 
 document.addEventListener("DOMContentLoaded", function() {
     console.log("The DOM has loaded");
     fetchData();
-    createChart()
+    generateNewChart();
 });
 
 console.log("Hello World");

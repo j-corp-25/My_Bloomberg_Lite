@@ -33,5 +33,58 @@ function createChart(data,selector){
     .domain(d3.extent(data, (d) => d.datetime))
     .range([marginLeft, width - marginRight]);
 
+    const yScale = d3
+    .scaleLinear()
+    .domain(d3.extent(data, (d) => d.close))
+    .range([height - marginBottom, marginTop]); //we reverse where the pixels start here from top left to bottom left
+
+    //This grabs the x-axis line and the y-axis line and creates ticks based on the domain and range above
+    const xAxis = d3.axisBottom(xScale).tickFormat(dateFormat);
+    const yAxis = d3.axisLeft(yScale)
+
+    //This will clear anything existing in svg, making it look like we are updating the chart but we are actually
+    //erasing everything
+    d3
+    .select(selector)
+    .selectAll("*").
+    remove();
+
+    //This selects the container that has the svg and changes its height and width. You can also just create a new container
+    //but this is the way I started mine since my svg is already in my html
+    const svg = d3
+    .select(selector)
+    .attr("width", width)
+    .attr("height", height)
+
+    // In d3 we have to append everything we create because just because we create something doesn't mean its
+    //"implicitly" added so we add(append) the axis we created earlier inside the chart container by using "g"
+    //which "groups" them together
+    svg.append("g")
+    .attr("transform", `translate(0,${height - marginBottom})`)
+    .call(xAxis);
+
+    svg.append("g")
+    .attr("transform", `translate(${marginLeft},0)`)
+    .call(yAxis);
+
+    //We need to create a line that will eventually follow a path
+    const path = d3
+    .line()
+    .x((d) => xScale(d.datime))
+    .y((d) => yScale(d.close));
+
+    //This will be the path that the line will "follow" we can customize color,fill, and many other things using ".attr"
+    svg
+    .append("path")
+    .datum(data)
+    .attr("fill", "none")
+    .attr("stroke", "steelblue")
+    .attr("stroke-width", 2)
+    .attr("d", line);
 }
-export default createChart
+
+function generateNewChart(data) {
+    createChart(data, "#chart");
+}
+
+export default generateNewChart; updateChart;
