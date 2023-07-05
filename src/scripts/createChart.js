@@ -42,6 +42,10 @@ function createChart(data,selector){
     const xAxis = d3.axisBottom(xScale).tickFormat(dateFormat);
     const yAxis = d3.axisLeft(yScale)
 
+    //this will add/create gridline to the chart like any normal chart
+    const xGridline = d3.axisBottom(xScale).tickSize(-height + marginTop + marginBottom).tickFormat("");
+    const yGridline = d3.axisLeft(yScale).tickSize(-width + marginLeft + marginRight).tickFormat("");
+
     //This will clear anything existing in svg, making it look like we are updating the chart but we are actually
     //erasing everything
     d3
@@ -56,12 +60,25 @@ function createChart(data,selector){
     .attr("width", width)
     .attr("height", height)
 
+    //like before, anything we create we need to append to the "group" which is g from x and y gridline above
+    svg.append("g")
+    .attr("class", "grid")
+    .attr("transform", `translate(0,${height - marginBottom})`)
+    .style("stroke-dasharray",("3,3"))
+    .call(xGridline);
+
+    svg.append("g")
+    .attr("class", "grid")
+    .attr("transform", `translate(${marginLeft},0)`)
+    .style("stroke-dasharray",("3,3"))
+    .call(yGridline);
     // In d3 we have to append everything we create because just because we create something doesn't mean its
     //"implicitly" added so we add(append) the axis we created earlier inside the chart container by using "g"
     //which "groups" them together
     svg.append("g")
     .attr("transform", `translate(0,${height - marginBottom})`)
     .call(xAxis);
+
 
     svg.append("g")
     .attr("transform", `translate(${marginLeft},0)`)
