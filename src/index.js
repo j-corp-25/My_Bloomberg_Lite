@@ -1,8 +1,11 @@
 import fetchData from './scripts/fetchData';
 import {generateNewChart} from './scripts/createChart';
+import fetchNews from './scripts/fetchNews';
 
 document.addEventListener("DOMContentLoaded", function () {
+
     let currentTicker = '';
+
     const tickerElement = document.getElementById('chart-container-ticker');
     const SNP500 = [
         "MMM",
@@ -12,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "KO",
         "GE"
     ]
+    fetchNews();
     // Selects all the buttons under id=date-intervals
     const intervalButtons = document.querySelectorAll('#date-intervals button');
 
@@ -21,10 +25,10 @@ document.addEventListener("DOMContentLoaded", function () {
         try {
             const data = await fetchData(ticker, interval);
             generateNewChart(data);
+
         } catch (error) {
             console.error(`Failed to get data for ticker ${ticker}:`, error)
         }
-
     }
     // Picks a random ticker from the list above
     function randomTicker() {
@@ -46,6 +50,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const ticker = document.querySelector('#ticker-input').value;
         updateDataForTicker(ticker, '1month');
     });
+    document.getElementById("defaultOpen").click();
+
     function openTab(evt, tabName) {
         var i,
             tabcontent,
@@ -62,7 +68,6 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById(tabName).style.display = "block";
         evt.currentTarget.className += " active";
     }
-    document.getElementById("defaultOpen").click();
 
     var tabButtons = document.getElementsByClassName('tablinks');
     for (var i = 0; i < tabButtons.length; i++) {
@@ -71,6 +76,5 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
     }
-
 
 });
