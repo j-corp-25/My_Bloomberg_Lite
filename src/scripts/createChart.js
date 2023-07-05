@@ -8,10 +8,10 @@ function createChart(data,selector){
     //Define the chart size and margins
     //This will be the size of the chart inside the svg tag in the html
     const width = 875;
-    const height = 400;
+    const height = 520;
     const marginTop = 20;
     const marginRight = 20;
-    const marginBottom = 30;
+    const marginBottom = 40;
     const marginLeft = 40;
 
     //This switches the time format to accommodate the smaller intervals on the x-axis when we fetch time data from API

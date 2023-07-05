@@ -1,9 +1,10 @@
-.grid line {
+.grid {
     stroke: lightgrey;
-    stroke-opacity: 0.7;
-    shape-rendering: crispEdges;
+    stroke-opacity: 0.3;
 }
 
-.grid path {
-    stroke-width: 0;
+#chart {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
 }
