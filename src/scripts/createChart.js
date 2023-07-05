@@ -83,8 +83,9 @@ function createChart(data,selector){
     .attr("d", line);
 }
 
+//this function will generate a new chart and delete the old one passing in the data from the fetch and the chart class which is assigned to my svg. I could have selected the svg from the start but this is how I did it
 function generateNewChart(data) {
     createChart(data, "#chart");
 }
 
-export default generateNewChart; updateChart;
+export { createChart, generateNewChart };
