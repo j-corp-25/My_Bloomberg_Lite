@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="./dist/main.css" />
     <script src="./dist/main.js"></script>
+    <link rel="stylesheet" href="./src/styles/reset.css">
+    <link rel="stylesheet" href="./src/styles/styles.css">
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/d3-color@3"></script>
     <script src="https://cdn.jsdelivr.net/npm/d3-scale@4"></script>
@@ -13,13 +15,13 @@
   <body>
     <header class="nav-header">
       <nav class="main-nav">
-      <p>
-        <span>My BloombergLite</span>
-      </p>
-      <ul>
-        <li><a href="">Git Hub</a></li>
-        <li><a href="">LinkedIn</a></li>
-        <li><a href="">Porfolio</a></li>
+        <p class="logo">
+          <span class="bold">My</span> Bloomberg<span class="bold">Lite</span>
+        </p>
+       <ul class="nav-links">
+         <li><a href="">Git Hub</a></li>
+         <li><a href="">LinkedIn</a></li>
+         <li><a href="">Porfolio</a></li>
       </ul>
       <form class="ticker-form">
         <input type="text" id="ticker-input" placeholder="Enter ticker..MCD" required>
@@ -29,25 +31,30 @@
     </header>
     <main>
       <section class="top-section-container">
-        <div id="chart-container">
-          <span id="ticker-label">Ticker: <span id="chart-container-ticker"></span></span>
-          <svg id="chart"></svg>
-          <div id="date-intervals">
-             <!-- Added an animated button that pulsates.Wrapped it in div so animation doesnt     affect other elements -->
-             <div id="live-button-container">
-               <button class="pulse-live-data"><span>Live</span></button>
-             </div>
-             <button value="1min">1Min</button>
-             <button value="5min">5Min</button>
-             <button value="15min">15Min</button>
-             <button value="30min">30Min</button>
-             <button value="1day">1D</button>
-             <button value="1week">1Week</button>
-             <button value="1month">Max</button>
-         </div>
+           <div id="chart-container">
+             <span id="ticker-label">Ticker: <span id="chart-container-ticker"></span>
+             </span>
+              <svg id="chart"></svg>
+              <div id="date-intervals">
+              <!-- Added an animated button that pulsates.Wrapped it in div so animation doesnt     affect other elements -->
+                <div id="live-button-container">
+                  <button class="pulse-live-data"><span>Live</span></button>
+                </div>
+
+                <button value="1min">1Min</button>
+                <button value="5min">5Min</button>
+                <button value="15min">15Min</button>
+                <button value="30min">30Min</button>
+                <button value="1day">1D</button>
+                <button value="1week">1Week</button>
+                <button value="1month">Max</button>
+              </div>
+           </div>
+
          <!-- This is a section where the user can access additional info -->
-         <aside class="side-information-section">
-            <div class="tab">
+         <section id="aside-containers">
+            <aside class="side-information-section">
+             <div class="tab">
                 <button class="tablinks" id="defaultOpen">News</button>
                 <button class="tablinks">Reddit</button>
             </div>
@@ -69,25 +76,56 @@
                 <p>Author</p>
             </article>
            </div>
-           <div id="Reddit" class="tabcontent">
-            <h3>Reddit</h3>
-           <article>
-              <h4><a href="#">Post Title</a></h4>
-              <p>Post Summary</p>
-              <p>Post Author</p>
-            </article>
-           <article>
-              <h4><a href="#">Post Title</a></h4>
-              <p>Post Summary</p>
-              <p>Post Author</p>
-            </article>
-           <article>
-              <h4><a href="#">Post Title</a></h4>
-              <p>Post Summary</p>
-              <p>Post Author</p>
-            </article>
-           </div>
-         </aside>
+            <div id="Reddit" class="tabcontent">
+                <h3>Reddit</h3>
+               <article>
+                  <h4><a href="#">Post Title</a></h4>
+                  <p>Post Summary</p>
+                  <p>Post Author</p>
+                </article>
+               <article>
+                  <h4><a href="#">Post Title</a></h4>
+                  <p>Post Summary</p>
+                  <p>Post Author</p>
+                </article>
+               <article>
+                  <h4><a href="#">Post Title</a></h4>
+                  <p>Post Summary</p>
+                  <p>Post Author</p>
+                </article>
+            </div>
+            </aside>
+            <aside class="ratio-information-container">
+              <h4 class="ratio-titles">Fundamentals
+              <ul class="ratio-list-container">
+               <li></li>
+               <li></li>
+               <li></li>
+               <li></li>
+               <li></li>
+             </ul>
+            </h4>
+              <h4 class="ratio-titles">Technicals
+               <ul class="ratio-list-container">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+               </ul>
+            </h4>
+              <h4 class="ratio-titles"> Key Executives
+              <ul class="ratio-list-container">
+                <li></li>
+                <li></li>
+
+              </ul>
+            </h4>
+
+
+
+           </aside>
+        </section>
         </div>
       </section>
     </main>

@@ -1,3 +1,195 @@
+.main-nav {
+    background-color: #e9e9e9;
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 16px;
+}
+
+.main-nav .logo,
+.main-nav .nav-links,
+.main-nav .ticker-form {
+    display: flex;
+    align-items: center;
+}
+#live-button-container {
+    width: 55px;
+    height: 30px;
+}
+
+.main-nav .nav-links {
+    gap: 16px;
+}
+
+.main-nav a {
+    color: black;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.main-nav a:hover {
+    background-color: orange;
+    color: black;
+}
+
+.ticker-form {
+    gap: 16px;
+}
+
+h1 {
+    border: 2px solid ;
+}
+
+h1 > p{
+    margin: 5px 10px 10px 10px;
+}
+
+.bold {
+    font-weight: 800; /* You can adjust this value. Normal weight is 400, and maximum available is 900. */
+}
+
+div#date-intervals {
+    display: flex;
+    justify-content: flex-start;
+}
+div#date-intervals {
+    margin-left: 15mm;
+    gap: 12.5mm;
+}
+
+#date-intervals button:hover {
+    background-color: orange;
+
+}
+#date-intervals button:focus {
+    background-color: orange;
+
+}
+
+#date-intervals .pulse-live-data {
+    /* animation properties */
+    object-position: absolute;
+    text-align: center;
+    transform: translateZ(0);
+    box-shadow: 0 0 1px transparent;
+    animation-name: my-animation;
+    animation-duration: .8s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+    /* other properties */
+    width: 43px;
+    height: 25px;
+    border-radius: 8px;
+    border: black solid;
+    border: 1.7px black solid;
+
+
+
+  }
+
+  @keyframes my-animation {
+    to {
+      background-color: orange;
+      padding: 0;
+      width: 52px;
+      height: 25px;
+      margin-left:5px;
+      margin-right: 5px;
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+  }
+
+section.top-section-container {
+    display: flex;
+}
+
+div#news-side-container {
+    /* padding-left: 100px; */
+    padding: 50px 50px;
+    border: thin solid;
+}
+
+
+
+
+
+body {font-family: Arial;}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  margin-top: 20px;
+  /* width: 1000px; */
+  /* margin-top: 10px;
+  margin-left:15px ; */
+  /* border: 2px solid #000000; */
+  /* background-color: #f1f1f1; */
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  outline: none;
+  cursor: pointer;
+  padding: 10px 12px;
+  font-size: 12px;
+  width: 225px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: orange;
+  border-right: #ccc;
+  border-bottom: #ccc;
+  border-bottom: 0;
+
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    border-bottom: none;  /* Modify if needed */
+    background-color: orange;
+    font-size: 20px;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+    height: 175px;  /* adjust this value according to your needs */
+    overflow-y: auto;
+  }
+
+
+span {
+    font-weight: 10px;
+    height: inherit;
+    width: inherit;
+}
+
+
+div#chart-container {
+    padding-right: 40px;
+}
+
+span#chart-container-ticker {
+    margin-left: 5px;
+
+}
+
+span#ticker-label {
+    margin-left: 50px;
+    position: absolute;
+    margin-top: 15px
+}
+
+
+
 .grid {
     stroke: lightgrey;
     stroke-opacity: 0.3;
@@ -8,3 +200,35 @@
     max-width: 100%;
     max-height: 100%;
 }
+
+.top-section-container {
+    display: flex;
+}
+
+#aside-containers {
+    display: flex;
+    flex-direction: column;
+    
+
+
+
+}
+
+.side-information-section {
+    max-width: 100%;
+    max-height: 100%;
+}
+.ratio-information-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.ratio-titles {
+    /* display: flex;
+    align-items: center; */
+}
+
+.ratio-list-container {
+    /* display: flex; */
+}
+L

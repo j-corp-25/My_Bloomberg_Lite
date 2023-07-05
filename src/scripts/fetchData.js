@@ -1,4 +1,4 @@
-async function fetchData(ticker, interval = "1month") {
+// async function fetchData(ticker, interval = "1month") {
     let startDate = "1985-01-01";
     let endDate = "2023-06-30";
 
