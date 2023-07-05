@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     //Picks a random ticker from the list above
     function randomTicker() {
-        return SNP500[(Math.floor(Math.random() * randomSP500.length))];
+        return SNP500[(Math.floor(Math.random() * SNP500.length))];
     }
 
     intervalButtons.forEach(button => {
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
     //Creates chart based on the ticker that generates randomly which is when the page loads
-    generateNewChart(randomTicker());
+    updateDataForTicker(randomTicker(),);
 
     //Instead of cliick this adds a submit listener to the ticker form when searching for stock
     document.querySelector('.ticker-form').addEventListener('submit', function (e) {
@@ -41,6 +41,4 @@ document.addEventListener("DOMContentLoaded", function() {
         const ticker = document.querySelector('#ticker-input').value;
         updateDataForTicker(ticker,'1month');
     });
-
-
 });

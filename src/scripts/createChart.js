@@ -18,10 +18,10 @@ function createChart(data,selector){
     data.forEach((d) => {
         if (d.datetime.includes(" ")) {
             d.datetime = d3.timeParse("%Y-%m-%d %H:%M:%S")(d.datetime);
-            formatDate = d3.timeFormat("%I:%M:%S %p");
+            dateFormat = d3.timeFormat("%I:%M:%S %p");
         } else {
             d.datetime = d3.timeParse("%Y-%m-%d")(d.datetime);
-            formatDate = d3.timeFormat("%Y-%m-%d");
+            dateFormat = d3.timeFormat("%Y-%m-%d");
         }
         //This turns the close: "45.99" into a number we can manipulate which makes it more dynamic
         d.close = parseFloat(d.close);
@@ -68,9 +68,9 @@ function createChart(data,selector){
     .call(yAxis);
 
     //We need to create a line that will eventually follow a path
-    const path = d3
+    const line = d3
     .line()
-    .x((d) => xScale(d.datime))
+    .x((d) => xScale(d.datetime))
     .y((d) => yScale(d.close));
 
     //This will be the path that the line will "follow" we can customize color,fill, and many other things using ".attr"
