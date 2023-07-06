@@ -236,3 +236,4 @@ Thursday:
 - Used this video to have a basic idea how modals work https://www.youtube.com/watch?v=AF6vGYIyV8M&t=72s
 - My Api boilerplates came from this amazing website  https://rapidapi.com/hub
 - Used this awesome website for ideas and templates for basic css https://www.w3schools.com/css/default.asp
+- Got my favicon from this website https://www.favicon.cc/?action=icon&file_id=929964
