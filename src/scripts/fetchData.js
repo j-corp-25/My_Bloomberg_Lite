@@ -6,43 +6,43 @@ async function fetchData(ticker, interval = "1month") {
     // let year = date.getFullYear();
 
     let startDate = "1985-01-01";
-    let endDate = "2023-06-30";
+    let endDate = "2023-07-06";
     // let endDate = `${year}-0${month}-${day}`;
     // console.log(endDate)
 
     if (interval === "15min") {
-        startDate = "2023-06-29";
+        startDate = "2023-07-05";
         endDate = endDate;
     } else if (interval === "1min") {
-        startDate = "2023-06-29";
+        startDate = "2023-07-05";
         endDate = endDate;
     } else if (interval === "5min") {
         startDate = "2023-06-28";
         endDate = endDate;
     } else if (interval === "15min") {
-        startDate = "2023-06-27";
+        startDate = "2023-07-04";
         endDate = endDate;
     } else if (interval === "30min") {
-        startDate = "2023-06-26";
+        startDate = "2023-07-02";
         endDate = endDate;
     } else if (interval === "45min") {
-        startDate = "2023-06-23";
+        startDate = "2023-07-01";
         endDate = endDate;
     } else if (interval === "1h") {
-        startDate = "2023-06-22";
+        startDate = "2023-06-25";
         endDate = endDate;
     } else if (interval === "2h") {
         startDate = "2023-06-21";
         endDate = endDate;
     } else if (interval === "4h") {
-        startDate = "2023-06-16";
+        startDate = "2023-06-18";
         endDate = endDate;
     } else if (interval === "1day") {
-        startDate = "2023-06-01";
-        endDate = "2023-06-30";
+        startDate = "2023-06-05";
+        endDate = "2023-07-06";
     } else if (interval === "1week") {
         startDate = "2023-03-15";
-        endDate = "2023-06-30";
+        endDate = "2023-07-06";
     } else {
         interval = interval;
     }

@@ -108,7 +108,7 @@ function createChart(data,selector){
     .attr("cy", function(d, i) { return yScale(d.close) })
     .attr("r", 5) // Radius size, could be adjusted
     .attr('fill', function (d, i) {
-        return dateFormat(d.datetime) // If dateFormat function returns color code
+        return dateFormat(d.datetime) // 
     })
     .style("opacity", 0) // Start invisible
     .on('mouseover', function (d, i) {

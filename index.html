@@ -15,7 +15,14 @@
   </head>
   <body>
       <!-- <div class="modal-container">
-        <button type="submit" class="modal-btn">Done</button>
+        <button type="submit" class="modal-btn" onclick="openPopup()">Done</button>
+        <div class="modal-popup" id="modal-popup">
+          <figure></figure>
+          <h4> Thank you!</h4>
+          <p>This is all the info you need.Thanks!</p>
+          <button type="button" onclick="closePopup()">Got It!</button>
+
+        </div>
       </div> -->
 
 
@@ -91,6 +98,14 @@
                   <p>Subreddit</p>
                   <p>Post Author:</p>
                 </article>
+            </div>
+
+            <div class="instructions-container">
+              <h4 class="instructions-title">Instructions: </h4>
+              <li> Search any ticker in mind on the search bar above</li>
+              <li> Use the bottons as filters to manipulate the time frame</li>
+              <li> After searching a ticker the top Trending Posts will populate</li>
+              <p> Have fun searching any stock you want!</p>
             </div>
             <!-- <div id="News" class="tabcontent">
             <article>

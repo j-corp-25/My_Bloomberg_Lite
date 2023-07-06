@@ -4,7 +4,7 @@ import fetchRedditPosts from './scripts/fetchRedditPosts'; // New import
 import updateRedditPosts from './scripts/updateRedditPosts'; // New import
 
 document.addEventListener("DOMContentLoaded", function () {
-
+   
     let currentTicker = '';
 
     const tickerElement = document.getElementById('chart-container-ticker');

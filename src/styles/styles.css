@@ -430,9 +430,12 @@ ul.ratio-list-container {
     box-shadow: 0 0 0 15px
 }
 
+
+
 .modal-container {
+    box-sizing: border-box;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-color: beige;
     display: flex;
     align-items: center;
@@ -440,22 +443,85 @@ ul.ratio-list-container {
 }
 
 .modal-btn {
-    padding: 10px 50px;
+    box-sizing: border-box;
+    padding: 10px 30px;
     background: orange;
     outline: none;
-    font-size: 40;
     border-radius: 20px;
+    cursor: pointer;
+    font-size: 35px;
+
+
 }
 
-.info-pop {
-    width: 50%;
-    background: blue;
-    border-radius: 20px;
+.modal-popup {
+    box-sizing: border-box;
+    width: 400px;
+    background-color: aqua;
+    border-radius: 10px;
     position: absolute;
-    top: 50%;
+    top: 0;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%)scale(0.1);
     text-align: center;
-    padding: 0 25px 25px;
-    color: orange;
+    padding: 0 20px 20px;
+    color: black;
+    visibility: hidden;
+    transition: transform 0.4s,top 0.4s;
+
+}
+
+.open-popup {
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%,-50%) scale(1);
+}
+/* .modal-popup figure {
+    box-sizing: border-box;
+    width: 100px;
+    margin-top: -50px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+} */
+
+
+.modal-popup h4 {
+    box-sizing: border-box;
+    font-size: 30px;
+    margin: 25px 0 25px;
+}
+
+.modal-popup button {
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: 50px;
+    padding: 5px 0;
+    background: orange;
+    color: black;
+    border:1px solid;
+    outline: none;
+    font-size: 22px;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 7px 7px rgba(0,0,0,0.5);
+
+
+}
+
+.instructions-container {
+    margin-top: 20px;
+    border-radius: 10px;
+    border: 1px solid black;
+    height: 200px;
+    padding: 5px 5px 5px;
+
+}
+.instructions-container p {
+    margin-left: 50px;
+    margin-top: 15px;
+}
+
+div#date-intervals {
+    margin-left: 25mm;
+    gap: 20mm;
 }
