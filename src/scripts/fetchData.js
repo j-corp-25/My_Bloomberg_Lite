@@ -1,6 +1,14 @@
 async function fetchData(ticker, interval = "1month") {
+    // const date = new Date();
+
+    // let day = date.getDate();
+    // let month = date.getMonth() + 1;
+    // let year = date.getFullYear();
+
     let startDate = "1985-01-01";
     let endDate = "2023-06-30";
+    // let endDate = `${year}-0${month}-${day}`;
+    // console.log(endDate)
 
     if (interval === "15min") {
         startDate = "2023-06-29";
