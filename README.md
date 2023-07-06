@@ -17,7 +17,7 @@ The main motivators for this project is my finance background, I read about comp
 
 ### Below is the wireframe for the project
 
-![ProjectWireframe](/My_Bloomberg/assets/new_frame.png)
+![ProjectWireframe](/My_Bloomberg/assets/Wire_Frame.jpeg)
 
 
 
@@ -185,10 +185,9 @@ In addition, this project will include:
 Technologies, Libraries, APIs:
 We plan to use the following technologies, libraries, and APIs:
 
-- D3.js for creating interactive and visually appealing stock price charts.
-- Alpha Vantage API for retrieving real-time and historical stock data.
+- D3.js for creating interactive and visually appealing stock price charts. 12 Data API for retrieving real-time and historical stock data.
 - As a backup I will be using Realtime Stock Data API
-- If I have the time would like to  use reddit API and News API
+- If I have the time would like to use reddit API.
 
 Implementation Timeline:
 
@@ -203,7 +202,7 @@ Friday:
 
 Saturday:
 
-- Integrate Alpha Vantage API or Realtime Stock Data to fetch real-time stock data.
+- Integrate 12 Data API or Realtime Stock Data to fetch real-time stock data.
 
 Sunday:
 
