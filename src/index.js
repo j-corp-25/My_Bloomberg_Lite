@@ -53,7 +53,9 @@ document.addEventListener("DOMContentLoaded", function () {
         const ticker = document.querySelector('#ticker-input').value;
         updateDataForTicker(ticker, '1month');
     });
-    document.getElementById("defaultOpen").click();
+    setTimeout(() => {
+        document.getElementById("defaultOpen").click();
+    }, 0);
 
     function openTab(evt, tabName) {
         var i,

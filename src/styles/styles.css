@@ -279,3 +279,23 @@ article {
     overflow-x: auto;
     width: 450px;
 }
+
+.tab button.active {
+    border-bottom: none;
+    background-color: orange;
+    font-size: 20px;
+    width: -webkit-fill-available;
+}
+
+article :nth-child(3) {
+    font-weight: bolder;
+}
+
+article :nth-child(4) {
+    font-style: italic;
+}
+
+h4 a {
+    text-decoration: none;
+
+}
