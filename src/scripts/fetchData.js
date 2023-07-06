@@ -59,9 +59,9 @@ async function fetchData(ticker, interval = "1month") {
 
     try {
         const response1 = await fetch(url1, options1);
-        if (! response1.ok) 
+        if (! response1.ok)
             throw new Error('API request failed');
-        
+
         const result1 = await response1.json();
 
         const dataPoints = result1.values.map((value) => ({datetime: value.datetime, close: value.close}));
@@ -72,9 +72,9 @@ async function fetchData(ticker, interval = "1month") {
 
         try {
             const response2 = await fetch(url2, options2);
-            if (! response2.ok) 
+            if (! response2.ok)
                 throw new Error('Fallback API request failed');
-            
+
             const result2 = await response2.json();
 
             const dataPoints2 = result2.values.map((value) => ({datetime: value.datetime, close: value.close}));

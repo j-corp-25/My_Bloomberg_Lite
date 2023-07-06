@@ -272,3 +272,10 @@ article {
 .tabcontent :last-child{
   border-bottom: 0;
 }
+
+.tabcontent {
+    overflow-y: auto;
+    height: 300px;
+    overflow-x: auto;
+    width: 450px;
+}

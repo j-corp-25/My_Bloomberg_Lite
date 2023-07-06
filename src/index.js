@@ -1,6 +1,7 @@
 import fetchData from './scripts/fetchData';
 import {generateNewChart} from './scripts/createChart';
-import fetchNews from './scripts/fetchNews';
+import fetchRedditPosts from './scripts/fetchRedditPosts'; // New import
+import updateRedditPosts from './scripts/updateRedditPosts'; // New import
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -15,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "KO",
         "GE"
     ]
-    fetchNews();
+
     // Selects all the buttons under id=date-intervals
     const intervalButtons = document.querySelectorAll('#date-intervals button');
 
@@ -25,7 +26,9 @@ document.addEventListener("DOMContentLoaded", function () {
         try {
             const data = await fetchData(ticker, interval);
             generateNewChart(data);
-
+            // After generating the chart, fetch and update reddit posts
+            const redditPosts = await fetchRedditPosts(ticker);
+            updateRedditPosts(redditPosts);
         } catch (error) {
             console.error(`Failed to get data for ticker ${ticker}:`, error)
         }
